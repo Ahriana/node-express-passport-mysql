@@ -2,16 +2,16 @@
 
 // set up ======================================================================
 // get all the tools we need
-var express  = require('express');
-var session  = require('express-session');
+var express = require('express');
+var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var app      = express();
-var port     = process.env.PORT || 8080;
+var app = express();
+var port = process.env.PORT || 8080;
 
 var passport = require('passport');
-var flash    = require('connect-flash');
+var flash = require('connect-flash');
 
 // configuration ===============================================================
 // connect to our database
@@ -35,7 +35,7 @@ app.use(session({
 	secret: 'vidyapathaisalwaysrunning',
 	resave: true,
 	saveUninitialized: true
- } )); // session secret
+})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
